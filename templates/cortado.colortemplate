@@ -1,0 +1,288 @@
+# vim: set ft=colortemplate nomodeline:
+Full name:   cortado
+Short name:  cortado
+Author:      Jesse Hoyos <jessehoyos@icloud.com>
+Description: A warm and energetic colorscheme
+
+Background: dark
+Neovim:     yes
+
+#
+# Config vars
+#
+
+#if !exists('g:@shortname_italic_comments')
+    #let g:@shortname_italic_comments = 1
+#endif
+
+#if !exists('g:@shortname_italic_functions')
+    #let g:@shortname_italic_functions = 1
+#endif
+
+
+Color: base0        #171b23 ~ # Background
+Color: base1        #222834 ~ # Slightly lighter
+Color: base2        #373e48 ~ # Much lighter
+Color: base3        #363d49 ~ # Lightest
+
+Color: base4        #322b2a ~ # Almost invisible
+Color: base5        #453a36 ~ # Much darker
+Color: base6        #9a7d6a ~ # Slightly darker
+Color: base7        #d1c3ab ~ # Foreground
+Color: base8        #f6e3c2 ~ # Lighter
+
+Color: royal        #4791d1 ~
+Color: sea          #a1bfe0 ~
+Color: grass        #4fa579 ~
+Color: lemon        #f0da87 ~
+
+Color: lily         #c595b8 ~
+Color: sorbet       #ffaf8a ~
+Color: heat         #f9815c ~
+
+Color: blonde       #c79f5b ~
+Color: mill         #d6bfa9 ~
+Color: milk         #e3ddd8 ~
+
+Color: green_wash   #1d382c ~
+Color: red_wash     #4a322e ~
+Color: yellow_wash  #38342c ~
+Color: cyan_wash    #516585 ~
+
+
+Term Colors:  base0  heat    grass       blonde
+Term Colors:  royal  lily    sea         base8
+Term Colors:  base3  sorbet  green_wash  mill
+Term Colors:  sea    lemon   sea         lemon
+
+#
+# Highlighting
+#
+
+Normal         base7        base0
+Cursor         base0        base8
+None           none         none
+
+# Vim Interface
+
+CursorLineNr   milk         base1
+FoldColumn     base4        none
+Folded         base6        base1
+LineNr         base3        none
+MatchParen     grass        base1 bold
+SignColumn     base4        none
+
+Ignore         base4        none
+
+Pmenu          base6        base2
+PmenuSbar      base2        base2
+PmenuSel       base8        base3
+PmenuThumb     base1        base1
+
+ErrorMsg       heat         none
+ModeMsg        base5        none
+MoreMsg        sea          none
+Question       sea          none
+WarningMsg     blonde       none
+
+ColorColumn    none         base1
+CursorColumn   none         base1
+CursorLine     none         base0
+
+QuickFixLine   base0        royal
+StatusLine     base6        base1
+StatusLineNC   base3        base0
+VertSplit      base4        none
+WildMenu       base0        base7
+
+IncSearch      base0        base7
+Search         base0        royal
+Visual         none         base3
+
+DiffAdd        grass        green_wash
+DiffChange     none         base2
+DiffDelete     heat         red_wash
+DiffText       blonde       yellow_wash
+
+# Syntax
+
+Comment        cyan_wash    none  italic
+Constant       sorbet       none
+Error          heat         none
+PreProc        milk         none
+Special        blonde       none
+Statement      milk         none
+Type           sorbet       none
+
+Delimiter      base6        none
+Directory      sea          none
+Function       sea          none italic
+Include        lily         none
+Keyword        lily         none italic
+Number         heat         none
+Operator       base6        none
+SpecialComment base8        none italic
+StorageClass   lily         none
+String         lemon        none
+Title          base8        none bold
+Todo           royal        none
+Typedef        lily         none
+Underlined     milk         none underline
+vimOption      milk         none
+
+SpellBad       heat         none undercurl guisp=heat
+SpellCap       heat         none undercurl guisp=heat
+SpellLocal     heat         none undercurl guisp=heat
+SpellRare      heat         none undercurl guisp=heat
+
+# indentLine plugin
+#let g:indentLine_color_gui  = '@guibase4'
+#let g:indentLine_color_term = @term256base4
+
+# Limelight
+#let g:limelight_conceal_guifg = '@guibase5'
+#let g:limelight_conceal_ctermfg = @term256base5
+
+#
+# Links
+#
+
+# Vim Interface
+
+Terminal         -> Normal
+
+TabLine          -> StatusLineNC
+TabLineFill      -> StatusLineNC
+TabLineSel       -> StatusLine
+
+StatusLineTerm   -> StatusLine
+StatusLineTermNC -> StatusLineNC
+
+VisualNOS        -> Visual
+
+# Diff
+
+diffAdded          -> DiffAdd
+diffBDiffer        -> WarningMsg
+diffChanged        -> DiffChange
+diffCommon         -> WarningMsg
+diffDiffer         -> WarningMsg
+diffFile           -> Directory
+diffIdentical      -> WarningMsg
+diffIndexLine      -> Number
+diffIsA            -> WarningMsg
+diffNoEOL          -> WarningMsg
+diffOnly           -> WarningMsg
+diffRemoved        -> DiffDelete
+
+# Syntax
+
+Boolean            -> Constant
+Character          -> Constant
+Float              -> Constant
+
+Conditional        -> Statement
+Exception          -> Statement
+Label              -> Statement
+Repeat             -> Statement
+
+Define             -> PreProc
+Macro              -> PreProc
+PreCondit          -> PreProc
+
+Structure          -> Type
+Typedef            -> Type
+
+Debug              -> Special
+SpecialChar        -> Special
+Tag                -> Special
+
+Noise              -> Delimiter
+StringDelimiter    -> Delimiter
+
+Conceal            -> Ignore
+NonText            -> Ignore
+SpecialKey         -> Ignore
+EndOfBuffer        -> Ignore
+Whitespace         -> Ignore
+
+Identifier         -> Include
+
+Searchlight        -> IncSearch
+cssBraces          -> Delimiter
+gitcommitOverflow  -> Error
+gitcommitSummary   -> Title
+helpHyperTextJump  -> Underlined
+htmlArg            -> Function
+htmlEndTag         -> Delimiter
+htmlLink           -> Underlined
+htmlSpecialTagName -> htmlTagName
+htmlTag            -> Delimiter
+htmlTagName        -> Statement
+rustAttribute      -> Delimiter
+rustDerive         -> rustAttribute
+rustDeriveTrait    -> rustDerive
+rustIdentifier     -> Typedef
+rustModPath        -> None
+rustSigil          -> Delimiter
+scssAttribute      -> Delimiter
+vimAutoCmdSfxList  -> Type
+vimAutoEventList   -> Identifier
+vimCmdSep          -> Special
+vimCommentTitle    -> SpecialComment
+vimContinue        -> Delimiter
+vimHighlight       -> Statement
+vimUserFunc        -> Function
+
+#
+# Markdown
+#
+
+# We imitate iA Writer’s extremely minimal markdown highlighting to minimise
+# distraction when writing.
+
+markdownBold   none  none bold
+markdownItalic none  none italic
+markdownUrl    base5 none underline
+markdownCode   none  base2
+markdownFaded  base5 none
+
+markdownBlockquote        -> None
+markdownCodeBlock         -> markdownCode
+markdownCodeDelimiter     -> markdownCode
+markdownH1Delimiter       -> markdownH1
+markdownH2Delimiter       -> markdownH2
+markdownH3Delimiter       -> markdownH3
+markdownH4Delimiter       -> markdownH4
+markdownH5Delimiter       -> markdownH5
+markdownH6Delimiter       -> markdownH6
+markdownId                -> markdownFaded
+markdownIdDeclaration     -> markdownFaded
+markdownLinkDelimiter     -> markdownFaded
+markdownLinkText          -> None
+markdownLinkTextDelimiter -> markdownFaded
+markdownListMarker        -> markdownFaded
+markdownRule              -> None
+
+#
+# Activate config
+#
+
+# We override styling based on config vars here, rather than in the midst of
+# other highlight groups, so that the config vars’ effects can be edited
+# directly next to each other. An additional benefit of this strategy is that
+# the alignment of highlight group name, foreground, background, et cetera stays
+# unbroken.
+
+verbatim
+    if !g:@shortname_italic_comments
+        hi Comment        cterm=NONE gui=NONE
+        hi SpecialComment cterm=NONE gui=NONE
+    endif
+    if !g:@shortname_italic_functions
+        hi Function       cterm=NONE gui=NONE
+    endif
+endverbatim
+
+
+
